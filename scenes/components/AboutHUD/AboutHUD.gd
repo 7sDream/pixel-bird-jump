@@ -2,8 +2,8 @@ extends CanvasLayer
 
 # ===== Signal =====
 
-# when press exit key
-signal exit_pressed
+# when press back key
+signal back_pressed
 
 # ===== Export =====
 
@@ -41,10 +41,14 @@ func _input(event):
     elif event.is_action("scroll_up"):
         scroll.value -= MOUSE_SCROLL_SPEED
     elif event.is_action("ui_cancel"):
-        emit_signal("exit_pressed")
+        emit_signal("back_pressed")
 
 # ===== Signal Process =====
 
 # when links in rich text be clicked, open it in browser
 func _on_RichTextLabel_meta_clicked( meta ):
     OS.shell_open(meta)
+
+func _on_Back_pressed():
+    emit_signal("back_pressed")
+    

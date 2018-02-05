@@ -22,6 +22,6 @@ _sections_unfolded = [ "Visibility" ]
 
 layer = 2
 
-[connection signal="exit_pressed" from="AboutHUD" to="." method="_on_AboutHUD_exit_pressed"]
+[connection signal="back_pressed" from="AboutHUD" to="." method="_on_AboutHUD_back_pressed"]
 
 
