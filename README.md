@@ -45,11 +45,11 @@ See `asset/credits.txt` for more info about those materials.
 ## TODO
 
 - [ ] User data statistics
-- [ ]New best score tips
+- [ ] New best score tips
 - Option
   - [ ] Full screen switch
   - [ ] BGM and Effect volume
-  - [ ]Argument can adjust at runtime, like gravity, jump height, pipe moving speed etc
+  - [ ] Argument can adjust at runtime, like gravity, jump height, pipe moving speed etc
 - [ ] Some easter eggs
 
 ## License
