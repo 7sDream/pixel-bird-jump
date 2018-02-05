@@ -8,7 +8,7 @@ Godot Engine has feature of multi-platform deploy, thanks to that, you can [play
 
 Please give it a little patience, the loading time based on your browser and networking.
 
-Native executable for other platform can be fount in [release list].
+Native executable for other platform can be fount in [release list][release-list].
 
 ## About
 
@@ -46,7 +46,7 @@ See `asset/credits.txt` for more info about those materials.
 
 - [ ] User data statistics
 - [ ] New best score tips
-- Option
+- [ ] Option
   - [ ] Full screen switch
   - [ ] BGM and Effect volume
   - [ ] Argument can adjust at runtime, like gravity, jump height, pipe moving speed etc
