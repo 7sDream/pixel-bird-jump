@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Main/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/Background/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/MovingPipes/MovingPipes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/Bird/Bird.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/FPSCounter/FPSCounter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/GameHUD/GameHUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Main/Pause.gd" type="Script" id=7]
+[ext_resource path="res://assets/sound/Jingle_Lose_00.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sound/Collect_Point_01.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound/random silly chip song.ogg" type="AudioStream" id=10]
+
+[node name="Main" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Background" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="MovingPipes" parent="." index="1" instance=ExtResource( 3 )]
+
+_sections_unfolded = [ "Rect", "Transform" ]
+WIDTH = 120
+MARGIN_BOTTOM = 0
+SPACE = 180
+SPEED = 200
+TRIGGER_DISTANCE = 380
+
+[node name="Bird" parent="." index="2" instance=ExtResource( 4 )]
+
+[node name="FPSCounter" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="StartPosition" type="Node2D" parent="." index="4"]
+
+position = Vector2( 100, 260 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="GameHUD" parent="." index="5" instance=ExtResource( 6 )]
+
+pause_mode = 2
+_sections_unfolded = [ "Pause" ]
+
+[node name="Pause" type="Node2D" parent="." index="6"]
+
+pause_mode = 2
+visible = false
+script = ExtResource( 7 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Timer" type="Timer" parent="Pause" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="FailAudio" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ScoreAudio" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="BGM" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="new_score" from="MovingPipes" to="." method="_on_MovingPipes_new_score"]
+
+[connection signal="hit" from="Bird" to="." method="_on_Bird_hit"]
+
+[connection signal="sleeped" from="Bird" to="." method="_on_Bird_sleeped"]
+
+[connection signal="exit_clicked" from="GameHUD" to="." method="_on_GameHUD_exit_clicked"]
+
+[connection signal="restart_clicked" from="GameHUD" to="." method="_on_GameHUD_restart_clicked"]
+
+[connection signal="timeout" from="Pause/Timer" to="Pause" method="_on_Timer_timeout"]
+
+

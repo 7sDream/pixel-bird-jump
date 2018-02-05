@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/components/Pipe/Pipe.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/pipe/head.png" type="Texture" id=2]
+[ext_resource path="res://assets/image/pipe/tail.png" type="Texture" id=3]
+[ext_resource path="res://util/SizeUtil.gd" type="Script" id=4]
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6, 0.5 )
+
+[node name="Pipe" type="StaticBody2D"]
+
+position = Vector2( 235.496, 293.952 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+BASE_HEAD_HEIGHT = 50
+
+[node name="Head" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -8, 0 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="Tail" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, 7 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 3 )
+centered = false
+offset = Vector2( -8, 0 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="HeadCollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0, 3.5 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TailCollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0, 7.5 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SizeUtil" type="Node2D" parent="." index="4"]
+
+script = ExtResource( 4 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="5"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+

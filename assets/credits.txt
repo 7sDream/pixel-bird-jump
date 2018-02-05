@@ -1,0 +1,74 @@
+Title:
+    Flappy-Bit
+
+Author:
+    LD
+
+URL:
+    https://opengameart.org/content/flappy-bit
+
+License(s):
+    * OGA-BY 3.0 ( http://static.opengameart.org/OGA-BY-3.0.txt )
+
+Copyright/Attribution Notice:
+    Please inform me about your project before using these sprites, and give credit to "LD" or "Lucid Design" and link to http://luciddesignart.tk/
+
+File(s):
+    * image/*
+
+----------------------------------------
+
+Title:
+    8-Bit Sound Effects Library
+
+Author:
+    Little Robot Sound Factory
+
+URL:
+    https://opengameart.org/content/8-bit-sound-effects-library
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+Copyright/Attribution Notice:
+    Attribute Little Robot Sound Factory, and provide this link where possible:
+www.littlerobotsoundfactory.com
+
+File(s):
+    * sound/*.wav
+
+----------------------------------------
+
+Title:
+    Jump and Run (8-bit)
+
+Author:
+    bart
+
+URL:
+    https://opengameart.org/content/jump-and-run-8-bit
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * sound/random silly chip song.ogg
+
+----------------------------------------
+
+Title:
+    Cave Story font
+
+Author:
+    enigmansmp1824
+
+URL:
+    https://fontlibrary.org/en/font/cave-story
+
+License(s):
+    * CC-BY-SA 3.0 ( https://creativecommons.org/licenses/by-sa/3.0/legalcode )
+
+File(s):
+    * font/Cave-Story.ttf
+
+----------------------------------------

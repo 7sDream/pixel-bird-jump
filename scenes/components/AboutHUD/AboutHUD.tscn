@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/components/AboutHUD/AboutHUD.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/Bird/Bird.tscn" type="PackedScene" id=2]
+[ext_resource path="res://util/SizeUtil.gd" type="Script" id=3]
+[ext_resource path="res://resource/font64.Cave-Story.tres" type="DynamicFont" id=4]
+[ext_resource path="res://resource/font32.Cave-Story.tres" type="DynamicFont" id=5]
+
+[node name="AboutHUD" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+KEYBOARD_SPEED = 100
+MOUSE_SCROLL_SPEED = 20
+
+[node name="Bird" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 239.426, 57.1359 )
+gravity_scale = 0.0
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Z Index" ]
+
+[node name="SizeUtil" type="Node2D" parent="." index="1"]
+
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 460.0
+margin_bottom = 700.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Container" type="CenterContainer" parent="MarginContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 440.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect" ]
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 440.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "About"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 160.0
+margin_right = 440.0
+margin_bottom = 680.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "It's a completely free and open source game, all materials come from [color=#7FFFD4][url=https://opengameart.org/]OpenGameArt[/url][/color] and [color=#F1E5D1][url=https://fontlibrary.org]FontLibrary[/url][/color] website
+
+Image: Flappy-Bit, by [color=#ADFF2F][url=https://opengameart.org/content/flappy-bit]Lucid Design[/url][/color]
+BGM: Jump and Run, by [color=#FFA500][url=https://opengameart.org/content/jump-and-run-8-bit]bart[/url][/color]
+SE: 8-Bit Sound Effects Library, by [color=red][url=https://opengameart.org/content/8-bit-sound-effects-library]Little Robot Sound Factory[/url][/color]
+Font: Cave-Story, by [color=#FFD700][url=https://fontlibrary.org/en/font/cave-story]enigmansmp1824[/url][/color]
+See assset/creadits.txt for more info about thoose materials
+
+Powered by the awesome MIT licensed open source game engine: [color=#478cbf][url=https://godotengine.org/]Godot Engine[/url][/color]
+
+Code by [color=#00FFFF][url=https://github.com/7sDream]7sDream[/url][/color], I just put these beautiful things together
+
+All code and files can be found in this [color=#F4CAB1][url=https://github.com/7sDream/pixel-bird-jump]Github repo[/url][/color]
+
+PS: I choose color of links above randomly, if someone of you don't like your color, just tell me it by open a issue : )"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "It's a completely free and open source game, all materials come from OpenGameArt and FontLibrary website
+
+Image: Flappy-Bit, by Lucid Design
+BGM: Jump and Run, by bart
+SE: 8-Bit Sound Effects Library, by Little Robot Sound Factory
+Font: Cave-Story, by enigmansmp1824
+See assset/creadits.txt for more info about thoose materials
+
+Powered by the awesome MIT licensed open source game engine: Godot Engine
+
+Code by 7sDream, I just put these beautiful things together
+
+All code and files can be found in this Github repo
+
+PS: I choose color of links above randomly, if someone of you don't like your color, just tell me it by open a issue : )"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Size Flags", "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+
+

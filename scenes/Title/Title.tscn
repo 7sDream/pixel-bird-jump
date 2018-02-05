@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Title/Title.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/Background/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/TitleHUD/TitleHUD.tscn" type="PackedScene" id=3]
+
+[node name="Title" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Background" parent="." index="0" instance=ExtResource( 2 )]
+
+modulate = Color( 0.464844, 0.464844, 0.464844, 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+BG_SPEED = 100
+
+[node name="TitleHUD" parent="." index="1" instance=ExtResource( 3 )]
+
+layer = 2
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="about_clicked" from="TitleHUD" to="." method="_on_TitleHUD_about_clicked"]
+
+[connection signal="exit_clicked" from="TitleHUD" to="." method="_on_TitleHUD_exit_clicked"]
+
+[connection signal="start_clicked" from="TitleHUD" to="." method="_on_TitleHUD_start_clicked"]
+
+

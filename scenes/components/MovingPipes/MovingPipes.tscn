@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/components/MovingPipes/MovingPipes.gd" type="Script" id=1]
+
+[node name="MovingPipes" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+HEAD_HEIGHT = 50
+WIDTH = 100
+MIN_SPACE_Y = 100
+MAX_SPACE_Y = 620
+MARGIN_BOTTOM = 35
+INTERVAL = 300
+SPACE = 200
+SPEED = 300
+
+[node name="WaitingTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="WaitingTimer" to="." method="_on_WaitingTimer_timeout"]
+
+

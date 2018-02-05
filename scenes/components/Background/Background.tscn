@@ -1,0 +1,231 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scenes/components/Background/Background.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/background/bg/l1.png" type="Texture" id=2]
+[ext_resource path="res://assets/image/background/bg/l2.png" type="Texture" id=3]
+[ext_resource path="res://assets/image/background/bg/l3.png" type="Texture" id=4]
+[ext_resource path="res://assets/image/background/bg/l4.png" type="Texture" id=5]
+[ext_resource path="res://assets/image/background/bg/l5.png" type="Texture" id=6]
+[ext_resource path="res://assets/image/background/bg/l6.png" type="Texture" id=7]
+[ext_resource path="res://assets/image/background/way/way1.png" type="Texture" id=8]
+[ext_resource path="res://assets/image/background/way/way2.png" type="Texture" id=9]
+[ext_resource path="res://assets/image/background/way/way3.png" type="Texture" id=10]
+[ext_resource path="res://assets/image/background/way/way4.png" type="Texture" id=11]
+[ext_resource path="res://assets/image/background/way/way5.png" type="Texture" id=12]
+[ext_resource path="res://assets/image/background/way/way6.png" type="Texture" id=13]
+[ext_resource path="res://assets/image/background/house/house1.png" type="Texture" id=14]
+[ext_resource path="res://assets/image/background/house/house2.png" type="Texture" id=15]
+[ext_resource path="res://assets/image/background/cloud/cloud1.png" type="Texture" id=16]
+[ext_resource path="res://assets/image/background/cloud/cloud2.png" type="Texture" id=17]
+[ext_resource path="res://util/SizeUtil.gd" type="Script" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="Background" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+BG_SPEED = 200
+HOUSE_HEIGHT_PRESENT = 0.2
+HOUSE_GEN_INTERVAL = 5000
+CLOUD_GEN_INTERVAL = 5000
+CLOUD_HEIGHT_PRESENT = 0.1
+CLOUD_BASE_SPEED = 30
+CLOUD_MAX_ADD_SPEED = 170
+CLOUD_GEN_REGION_MIN_PERSENT = 0.1
+CLOUD_GEN_REGION_MAX_PERSENT = 0.4
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.0470588, 0.372549, 0.854902, 1 )
+
+[node name="BG" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 0, 713 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L1Container" type="Node2D" parent="BG" index="0"]
+
+[node name="Level1" type="Sprite" parent="BG/L1Container" index="0" groups=[
+"L1",
+"Level",
+]]
+
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="L2Container" type="Node2D" parent="BG" index="1"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Level2" type="Sprite" parent="BG/L2Container" index="0" groups=[
+"L2",
+"Level",
+]]
+
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="L3Container" type="Node2D" parent="BG" index="2"]
+
+[node name="Level3" type="Sprite" parent="BG/L3Container" index="0" groups=[
+"L3",
+"Level",
+]]
+
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="L4Container2" type="Node2D" parent="BG" index="3"]
+
+[node name="Level4" type="Sprite" parent="BG/L4Container2" index="0" groups=[
+"Level",
+"L4",
+]]
+
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="L5Container" type="Node2D" parent="BG" index="4"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Level5" type="Sprite" parent="BG/L5Container" index="0" groups=[
+"L5",
+"Level",
+]]
+
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="L6Containre" type="Node2D" parent="BG" index="5"]
+
+[node name="Level6" type="Sprite" parent="BG/L6Containre" index="0" groups=[
+"L6",
+"Level",
+]]
+
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -31 )
+flip_h = true
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="Way" type="Node2D" parent="." index="2"]
+
+position = Vector2( 0, 720 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Way" index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 2
+playing = true
+offset = Vector2( 20, -4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="House" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 27, 713 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="House1" type="Sprite" parent="House" index="0"]
+
+visible = false
+texture = ExtResource( 14 )
+offset = Vector2( 6, -7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="House2" type="Sprite" parent="House" index="1"]
+
+visible = false
+texture = ExtResource( 15 )
+offset = Vector2( 5, -6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Cloud" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Cloud1" type="Sprite" parent="Cloud" index="0"]
+
+visible = false
+texture = ExtResource( 16 )
+offset = Vector2( 7, -5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Cloud2" type="Sprite" parent="Cloud" index="1"]
+
+visible = false
+texture = ExtResource( 17 )
+offset = Vector2( 6, -4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HouseGenTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[node name="CloudGenTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[node name="SizeUtil" type="Node2D" parent="." index="7"]
+
+script = ExtResource( 18 )
+
+[connection signal="timeout" from="HouseGenTimer" to="." method="_on_HouseGenTimer_timeout"]
+
+[connection signal="timeout" from="CloudGenTimer" to="." method="_on_CloudGenTimer_timeout"]
+
+

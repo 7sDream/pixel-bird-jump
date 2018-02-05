@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/components/Bird/Bird.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/bird/bird_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/image/bird/bird_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/image/bird/bird_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/sound/Jump_03.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/Explosion_04.wav" type="AudioStream" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 36.992
+height = 15.37
+
+[node name="Bird" type="RigidBody2D" index="0"]
+
+position = Vector2( 212.323, 193.008 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.5
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear" ]
+__meta__ = {
+"_edit_group_": true
+}
+INIT_SPEED = 500
+JUMP_SPEED = 450
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 10, 10 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+rotation = 1.5708
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="CollisionAudio" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="body_entered" from="." to="." method="_on_Bird_body_entered"]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_Bird_body_shape_entered"]
+
+
