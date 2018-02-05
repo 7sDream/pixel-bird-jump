@@ -57,7 +57,7 @@ JUMP_SPEED = 450
 scale = Vector2( 10, 10 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Material", "Transform" ]
 
@@ -84,7 +84,5 @@ mix_target = 0
 bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Bird_body_entered"]
-
-[connection signal="body_shape_entered" from="." to="." method="_on_Bird_body_shape_entered"]
 
 

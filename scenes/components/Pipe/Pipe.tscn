@@ -5,9 +5,6 @@
 [ext_resource path="res://assets/image/pipe/tail.png" type="Texture" id=3]
 [ext_resource path="res://util/SizeUtil.gd" type="Script" id=4]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -18,7 +15,7 @@ extents = Vector2( 8, 3.5 )
 custom_solver_bias = 0.0
 extents = Vector2( 6, 0.5 )
 
-[node name="Pipe" type="StaticBody2D"]
+[node name="Pipe" type="StaticBody2D" index="0"]
 
 position = Vector2( 235.496, 293.952 )
 input_pickable = false
